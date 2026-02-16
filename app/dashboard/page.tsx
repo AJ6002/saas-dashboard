@@ -11,6 +11,7 @@
 //     </div>
 //   );
 // }
+import "../landing.css";
 
 export default function DashboardPage() {
   const metrics = [

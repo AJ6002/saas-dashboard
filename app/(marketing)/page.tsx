@@ -1,34 +1,6 @@
-// import Hero from "@/components/Hero";
-// import Features from "@/components/Features";
-// import Guide from "@/components/Guide";
-// import Companies from "@/components/Companies";
-// import CTA from "@/components/CTA";
-// import Testimonials from "@/components/Testimonials";
-// import Pricing from "@/components/Pricing";
-// import FAQ from "@/components/FAQ";
-// import Contact from "@/components/Contact";
-// import Footer from "@/components/Footer";
-
-// export default function Home() {
-//   return (
-//     <main>
-//       <Hero />
-//       <Features />
-//       <Guide />
-//       <Companies />
-//       <CTA />
-//       <Testimonials />
-//       <Pricing />
-//       <FAQ />
-//       <Contact />
-//       <Footer />
-//     </main>
-//   );
-// }
-
-
 import React from 'react';
 import Link from 'next/link';
+import "../landing.css";
 
 export default function Home() {
   return (
@@ -554,10 +526,10 @@ export default function Home() {
 
           {/* Column 1 */}
           <div className="absolute left-[1189px] top-[83px] w-[120px] h-[154px] font-normal text-[14px] text-[#9E9E9E] leading-[38px] flex flex-col items-start whitespace-nowrap">
-            <Link href="/marketing/pricing" className="hover:text-white transition-colors">Pricing</Link>
-            <Link href="/marketing/testimonials" className="hover:text-white transition-colors">Testimonials</Link>
-            <Link href="/marketing/faq" className="hover:text-white transition-colors">FAQ</Link>
-            <Link href="/marketing/coming-soon" className="hover:text-white transition-colors">Coming soon</Link>
+            <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link>
+            <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
+            <Link href="/coming-soon" className="hover:text-white transition-colors">Coming soon</Link>
           </div>
         </div>
 
