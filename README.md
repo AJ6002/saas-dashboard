@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 SaaS Dashboard (Next.js + NextAuth + Prisma)
 
-## Getting Started
+A full-stack SaaS dashboard built as a frontend shortlisting project.
 
-First, run the development server:
+This app demonstrates secure authentication, protected routes, dashboard UI patterns, and user management — similar to real SaaS products.
 
-```bash
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+- Credential login (email & password)
+- Password hashing using bcrypt
+- JWT session authentication (NextAuth)
+- Protected dashboard routes
+- Logout functionality
+
+### 🧭 Dashboard Layout
+- Persistent sidebar navigation
+- Active route highlighting
+- Logged-in user email display
+- Responsive SaaS layout
+
+### 👥 Users Management
+- User list UI
+- Click → user detail modal
+- Clean card layout
+
+### ⚙️ Settings
+- Update display name
+- Local persistence
+- Success feedback UI
+
+### 🎨 Theme System
+- Dark / Light mode toggle
+- Theme preference saved in localStorage
+- Tailwind CSS v4 dark mode
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+- Next.js 16 (App Router)
+- React
+- Tailwind CSS v4
+
+**Auth & Backend**
+- NextAuth.js
+- Prisma ORM
+- SQLite (local DB)
+- bcrypt password hashing
+
+---
+
+## 📁 Project Structure
+
+app/
+api/auth/[...nextauth]/route.ts → authentication route
+dashboard/
+page.tsx → dashboard overview
+users/page.tsx → users UI
+settings/page.tsx → settings
+login/page.tsx → login page
+signup/page.tsx → signup page
+
+components/
+Sidebar.tsx
+UserModal.tsx
+ThemeToggle.tsx
+Providers.tsx
+
+lib/
+prisma.ts → Prisma client
+
+prisma/
+schema.prisma
+
+
+---
+
+## ⚙️ Requirements
+
+Make sure you have installed:
+
+- Node.js **18+**
+- npm or yarn
+
+Check version:
+node -v
+
+## 🚀 Setup & Run Locally
+1️⃣ Clone repository
+git clone https://github.com/YOUR_USERNAME/saas-dashboard.git
+cd saas-dashboard
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Setup environment variables
+
+Create .env file in root:
+
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET=supersecretkey123
+NEXTAUTH_URL=http://localhost:3000
+
+4️⃣ Setup database
+npx prisma migrate dev
+
+5️⃣ Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🌐 Open in Browser
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Test Flow
+Signup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a new account.
 
-## Learn More
+Login
 
-To learn more about Next.js, take a look at the following resources:
+Sign in using created credentials.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+view metrics
 
-## Deploy on Vercel
+navigate sidebar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Users
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+click user → modal opens
+
+Settings
+
+update display name
+
+save changes
+
+Theme
+
+Toggle dark/light mode.
+
+##🎯 Why This Project Matters
+
+This project demonstrates:
+
+real authentication flow
+
+secure password handling
+
+protected routing
+
+scalable layout architecture
+
+modern SaaS UI patterns
+
+state management & UX thinking
+
+##🚀 Future Improvements
+
+API-based user data
+
+charts & analytics
+
+role-based access control
+
+email verification
+
+deployment & CI/CD
+
