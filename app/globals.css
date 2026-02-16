@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
+
+@import "tailwindcss";
+
+/* enable dark mode variant */
+@variant dark (&:where(.dark, .dark *));
+
+/* theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #ffffff;
+  --text: #111111;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --bg: #000000;
+  --text: #ffffff;
 }
 
 body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===============================
+   THEME TOKENS
+================================ */
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* Remove auto light mode override to avoid mismatch */
+html, body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===============================
+   GRID BACKGROUND (FIGMA STYLE)
+================================ */
+
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(64,64,71,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64,64,71,0.15) 1px, transparent 1px);
+  background-size: 110px 110px;
+
+  /* soft fade bottom like Figma */
+  mask-image: linear-gradient(to bottom, black 70%, transparent);
+}
+
+/* ===============================
+   GLOW BLOBS
+================================ */
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  z-index: -5;
+  pointer-events: none;
+}
+
+.glow-1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #222228 0%, transparent 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.glow-2 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, #494955, transparent);
+  top: 380px;
+  left: 120px;
+  filter: blur(50px);
+}
+
+.glow-3 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #494955, transparent);
+  top: 320px;
+  right: 140px;
+  filter: blur(40px);
+}
+
+/* prevent horizontal scroll from absolute elements */
+body {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
 }
