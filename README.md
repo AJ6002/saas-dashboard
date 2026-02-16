@@ -55,3 +55,119 @@ This app demonstrates secure authentication, protected routes, dashboard UI patt
 
 ## 📁 Project Structure
 
+app/
+api/auth/[...nextauth]/route.ts → authentication route
+dashboard/
+page.tsx → dashboard overview
+users/page.tsx → users UI
+settings/page.tsx → settings
+login/page.tsx → login page
+signup/page.tsx → signup page
+
+components/
+Sidebar.tsx
+UserModal.tsx
+ThemeToggle.tsx
+Providers.tsx
+
+lib/
+prisma.ts → Prisma client
+
+prisma/
+schema.prisma
+
+
+---
+
+## ⚙️ Requirements
+
+Make sure you have installed:
+
+- Node.js **18+**
+- npm or yarn
+
+Check version:
+node -v
+
+## 🚀 Setup & Run Locally
+1️⃣ Clone repository
+git clone https://github.com/YOUR_USERNAME/saas-dashboard.git
+cd saas-dashboard
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Setup environment variables
+
+Create .env file in root:
+
+DATABASE_URL="file:./dev.db"
+NEXTAUTH_SECRET=supersecretkey123
+NEXTAUTH_URL=http://localhost:3000
+
+4️⃣ Setup database
+npx prisma migrate dev
+
+5️⃣ Run development server
+npm run dev
+
+🌐 Open in Browser
+http://localhost:3000
+
+## 🧪 Test Flow
+Signup
+
+Create a new account.
+
+Login
+
+Sign in using created credentials.
+
+Dashboard
+
+view metrics
+
+navigate sidebar
+
+Users
+
+click user → modal opens
+
+Settings
+
+update display name
+
+save changes
+
+Theme
+
+Toggle dark/light mode.
+
+##🎯 Why This Project Matters
+
+This project demonstrates:
+
+real authentication flow
+
+secure password handling
+
+protected routing
+
+scalable layout architecture
+
+modern SaaS UI patterns
+
+state management & UX thinking
+
+##🚀 Future Improvements
+
+API-based user data
+
+charts & analytics
+
+role-based access control
+
+email verification
+
+deployment & CI/CD
+
